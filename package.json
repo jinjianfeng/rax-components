@@ -1,8 +1,9 @@
 {
+  "name": "rax-components",
   "private": true,
   "devEngines": {
     "node": "8.x || 9.x || 10.x || 11.x",
-    "npm": "6.x"
+    "yarn": "1.x"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",
@@ -52,7 +53,7 @@
     "minimist": "^1.2.0"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --no-ci",
+    "bootstrap": "lerna bootstrap",
     "build": "node ./scripts/compile-packages.js",
     "lint": "npm run lint:nofix -- --fix",
     "lint:nofix": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./",
@@ -67,5 +68,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "name": "rax-components"
+  "workspaces": [
+    "packages/*"
+  ]
 }
