@@ -52,7 +52,6 @@ function buildPackage(packagesDir, filePath) {
       if (process.argv[2] == filename) {
         process.stdout.write(chalk.bold.inverse('Build one package\n'));
         shell.cd(path.join(filePath));
-        shell.exec('tnpm install');
         shell.exec('npm run build');
         shell.cd('../');
       }
@@ -60,7 +59,6 @@ function buildPackage(packagesDir, filePath) {
       // build all package
       process.stdout.write(chalk.bold.inverse('Build all packages\n'));
       shell.cd(path.join(filePath));
-      shell.exec('tnpm install');
       shell.exec('npm run build');
       shell.cd('../');
     }
